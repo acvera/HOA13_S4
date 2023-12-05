@@ -1,0 +1,17 @@
+# Installation of ETCD
+  -  name: Installation of ETCD in Controller (Ubuntu)
+     apt:
+       name: etcd
+       state: present
+
+  -  name: Configuration of ETCD in Controller (Ubuntu)
+     template:
+       src: roles/Controller_Etcd/templates/etcd.conf.j2
+       dest: /etc/default/etcd
+
+  -  name: Enable and Start ETCD in Controller (Ubuntu)
+     systemd:
+       name: etcd
+       state: restarted
+       enabled: true
+

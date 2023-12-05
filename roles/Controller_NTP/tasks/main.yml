@@ -1,0 +1,12 @@
+# Installation of NTP
+  -  name: Install NTP (Chrony) in Controller (Ubuntu)
+     apt:
+       name: chrony
+       state: present
+
+  -  name: Enable and Start NTP in Controller (Ubuntu)
+     systemd:
+       name: chrony
+       state: restarted
+       enabled: true
+

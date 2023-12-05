@@ -1,0 +1,12 @@
+# Installation of NTP
+  -  name: Installation of NTP (Chrony) in Compute (CentOS)
+     yum:
+       name: chrony
+       state: present
+
+  -  name: Enable and Start NTP in Compute (CentOS)
+     systemd:
+       name: chronyd.service
+       state: restarted
+       enabled: true
+

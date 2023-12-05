@@ -1,0 +1,18 @@
+# Installation of MySQL and MariaDB Server
+  -  name: Installation of MySQL and MariaDB Server in Compute (CentOS)
+     yum:
+       name:
+         - mariadb
+         - mariadb-server
+         - python2-PyMySQL
+
+  -  name: Configuration of MySQL and MariaDB Server in Compute (CentOS)
+     template:
+       src: roles/Compute_SQL/templates/openstack.cnf.j2
+       dest: /etc/my.cnf.d/openstack.cnf
+
+#  -  name: Enable and Start MySQL and MariaDB in Compute (CentOS)
+#     systemd:
+#       name: mariadb.service
+#       state: restarted
+#       enabled: true

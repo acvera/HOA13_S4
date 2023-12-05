@@ -1,0 +1,17 @@
+# Installation of OpenStack Packages
+  -  name: Installation of OpenStack Train Release in Compute (CentOS)
+     yum:
+       name: centos-release-openstack-train
+       state: present
+
+  -  name: Upgrade Packages (CentOS)
+     yum:
+       name: "*"
+       state: latest
+
+  -  name: Installation of OpenStack Client and SELinux Security in Compute (CentOS)
+     yum:
+       name:
+         -  python-openstackclient
+         -  openstack-selinux
+       state: present

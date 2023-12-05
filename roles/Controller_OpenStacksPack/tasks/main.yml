@@ -1,0 +1,5 @@
+# Installation of OpenStack Packages 
+  -  name: Installation of OpenStack Client in Controller (Ubuntu)
+     apt:
+       name: python3-openstackclient
+       state: present

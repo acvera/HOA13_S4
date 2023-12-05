@@ -1,0 +1,13 @@
+# Installation of Memcached
+  -  name: Installation of Memcached in Compute (CentOS)
+     yum:
+       name:
+         - memcached
+         - python-memcached
+
+  -  name: Enable and Start Memcached in Compute (CentOS)
+     systemd:
+       name: memcached.service
+       state: restarted
+       enabled: true
+

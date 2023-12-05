@@ -1,0 +1,20 @@
+# Installation of Memcached
+  -  name: Installation of Memcached in Controller (Ubuntu)
+     apt:
+       name:
+         -  memcached
+         -  python3-memcache
+       state: present
+
+  -  name: Creation of Configuration of Memcached in Controller (Ubuntu)
+     template:
+       src: roles/Controller_Memcached/templates/memcached.conf.j2
+       dest: /etc/memcached.conf
+       mode: 0644
+
+  -  name: Enable and Start Memcached in Controller (Ubuntu)
+     systemd:
+       name: memcached
+       state: restarted
+       enabled: true
+
